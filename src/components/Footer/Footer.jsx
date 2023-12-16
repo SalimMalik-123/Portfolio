@@ -1,47 +1,53 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
-import { BsFacebook, BsSlack } from "react-icons/bs";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
-import emailjs from 'emailjs-com';
-import './footer.css'
+import emailjs from "emailjs-com";
+import "./footer.css";
 
-
-let intialFormData ={
-  name:"",email:"",message:""
-}
-let msg='';
+let intialFormData = {
+  name: "",
+  email: "",
+  message: "",
+};
+let msg = "";
 const Footer = () => {
+  const [formData, setFormData] = useState(intialFormData);
+  const [isLoad, setIsLoad] = useState(false);
+  const [isSended, setIsSended] = useState(false);
 
-  const[formData,setFormData] = useState(intialFormData)
-  const [isLoad,setIsLoad] = useState(false)
-  const [isSended,setIsSended] = useState(false)
-  
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
     //debugger
-    
-    console.log(e.target)
-    setIsLoad(true)
-    emailjs.send('service_um6xk0a', 'template_gsjrcl1', formData, '5cZ3rlMSxmnWtxHvz')
+
+    console.log(e.target);
+    setIsLoad(true);
+    emailjs
+      .send(
+        "service_um6xk0a",
+        "template_gsjrcl1",
+        formData,
+        "5cZ3rlMSxmnWtxHvz"
+      )
       .then((result) => {
-        msg ='Thank you! Your message has been submitted.';
-        setIsLoad(false)
-        setIsSended(true)
-        setFormData(intialFormData)
-          console.log(result.text);
-      }).catch(err => {
-        msg = `Failed!.${err.message && err.message}`
-        setIsLoad(false)
-        setIsSended(true)
+        msg = "Thank you! Your message has been submitted.";
+        setIsLoad(false);
+        setIsSended(true);
+        setFormData(intialFormData);
+        console.log(result.text);
       })
-  }
+      .catch((err) => {
+        msg = `Failed!.${err.message && err.message}`;
+        setIsLoad(false);
+        setIsSended(true);
+      });
+  };
 
   const scrollUp = () => {
     window.scroll({
@@ -100,7 +106,10 @@ const Footer = () => {
             </Zoom>
             <Zoom>
               <span>
-                <a target="blank" href="https://www.linkedin.com/in/saleem-malik-147775229/">
+                <a
+                  target="blank"
+                  href="https://www.linkedin.com/in/saleem-malik-147775229/"
+                >
                   <AiFillLinkedin />
                 </a>
               </span>
@@ -134,31 +143,51 @@ const Footer = () => {
               <span>
                 <CgProfile />
               </span>
-              <input type="text" name="name" placeholder="Fullname..."
+              <input
+                type="text"
+                name="name"
+                placeholder="Fullname..."
                 value={formData.name}
-                onChange={(e)=> setFormData({...formData,name:e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
               />
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail />
               </span>
-              <input type="email" name="email" placeholder="Email..."
+              <input
+                type="email"
+                name="email"
+                placeholder="Email..."
                 value={formData.email}
-                onChange={(e)=> setFormData({...formData,email:e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
               />
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail />
               </span>
-              <textarea cols="30" rows="10" name="message" placeholder="Message..."
+              <textarea
+                cols="30"
+                rows="10"
+                name="message"
+                placeholder="Message..."
                 value={formData.message}
-                onChange={(e)=> setFormData({...formData,message:e.target.value})}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
               ></textarea>
             </div>
-            <button className="" type="submit" >{isLoad ? <span class="loader"></span> : `Submit`}</button>
-            <div style={{marginTop:"5px"}}><p>{msg}</p></div>
+            <button className="" type="submit">
+              {isLoad ? <span class="loader"></span> : `Submit`}
+            </button>
+            <div style={{ marginTop: "5px" }}>
+              <p>{msg}</p>
+            </div>
           </form>
         </Slide>
       </Form>

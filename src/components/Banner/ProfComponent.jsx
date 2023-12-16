@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineInstagram } from "react-icons/ai";
-import { GiEarthAmerica } from "react-icons/gi";
-import { FaLinkedinIn,FaGithub } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
-import profile from '../../assets/profile3.png'
+import profile from "../../assets/file.jpeg";
 
 const ProfComponent = () => {
   return (
@@ -17,14 +15,25 @@ const ProfComponent = () => {
           <h1 className="green">Saleem Malik</h1>
           <h3>Fullstack Developer</h3>
           <p>
-          My passion lies in creating software that is both beautiful and functional. I’ve been  2+ years experience.
-
-Whether I’m designing a sleek user interface or coding a complex application, I’m always striving to create something unique and innovative. I love experimenting with new technologies and staying up-to-date with the latest trends in the tech world.
-
-Right now, I’m working on some exciting projects that I can’t wait to share with you. But I’m always open to new opportunities and collaborations.
+            My passion lies in creating software that is both beautiful and
+            functional. I’ve been 2+ years experience. Whether I’m designing a
+            sleek user interface or coding a complex application, I’m always
+            striving to create something unique and innovative. I love
+            experimenting with new technologies and staying up-to-date with the
+            latest trends in the tech world. Right now, I’m working on some
+            exciting projects that I can’t wait to share with you. But I’m
+            always open to new opportunities and collaborations.
           </p>
-          <button><a target="blank" href="mailto:salimmalik.dev@gmail.com">Let's talk</a></button>
-          <button><a  href="https://drive.usercontent.google.com/download?id=1BLEcff1qqsZmVrC2M9cat8-xkp7IMXZd&export=download&authuser=0&confirm=t&uuid=2e9748aa-9626-42c9-816a-0f25703fead8&at=APZUnTUPbeZ-7uN3mvWDWa3pdRCN:1695835605897">Resume</a></button>
+          <button>
+            <a target="blank" href="mailto:salimmalik.dev@gmail.com">
+              Let's talk
+            </a>
+          </button>
+          <button>
+            <a href="https://drive.usercontent.google.com/download?id=1BLEcff1qqsZmVrC2M9cat8-xkp7IMXZd&export=download&authuser=0&confirm=t&uuid=2e9748aa-9626-42c9-816a-0f25703fead8&at=APZUnTUPbeZ-7uN3mvWDWa3pdRCN:1695835605897">
+              Resume
+            </a>
+          </button>
           <Social>
             <p>Check out my</p>
             <div className="social-icons">
@@ -34,7 +43,10 @@ Right now, I’m working on some exciting projects that I can’t wait to share 
                 </a>
               </span> */}
               <span>
-                <a target="blank" href="https://www.linkedin.com/in/saleem-malik-147775229/">
+                <a
+                  target="blank"
+                  href="https://www.linkedin.com/in/saleem-malik-147775229/"
+                >
                   <FaLinkedinIn />
                 </a>
               </span>
@@ -50,7 +62,9 @@ Right now, I’m working on some exciting projects that I can’t wait to share 
       <Slide direction="right">
         <Profile>
           <img
-          src={profile}
+            className=""
+            style={{ borderRadius: "50%", backgroundColor: "blue" }}
+            src={profile}
             //src={"https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"}
             alt="profile"
           />
@@ -112,9 +126,9 @@ const Texts = styled.div`
     :hover {
       filter: drop-shadow(0px 10px 10px #01be9570);
     }
-    a{
+    a {
       font-weight: 500;
-      color: #ffffff
+      color: #ffffff;
     }
   }
 `;
@@ -157,7 +171,8 @@ const Social = styled.div`
 `;
 const Profile = styled.div`
   img {
-    width: 25rem;
+    width: 310px;
+    height: 320px;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {
@@ -165,11 +180,13 @@ const Profile = styled.div`
     }
 
     @media (max-width: 660px) {
-      width: 18rem;
+      width: 210px;
+      height: 220px;
     }
 
     @media (max-width: 640px) {
-      width: 100%;
+      width: 220px;
+      height: 220px;
     }
   }
 

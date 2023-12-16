@@ -1,7 +1,6 @@
 import React from "react";
-import { MdDesignServices ,} from "react-icons/md";
-import { FiCodesandbox,FiDatabase,FiServer } from "react-icons/fi";
-import { CgWebsite ,CgDatabase,CgServer} from "react-icons/cg";
+import { MdDesignServices } from "react-icons/md";
+import { FiCodesandbox, FiDatabase } from "react-icons/fi";
 import styled from "styled-components";
 import Card from "./Card";
 import { Slide } from "react-awesome-reveal";
@@ -11,7 +10,7 @@ const Services = () => {
     <Container id="service">
       <Slide direction="down">
         <h4>
-          My <span className="green">services</span>
+          My <span className="green">Experience</span>
         </h4>
         <h1>What I Do</h1>
       </Slide>
