@@ -63,10 +63,11 @@ const ProfComponent = () => {
         <Profile>
           <img
             className=""
-            style={{ borderRadius: "50%", backgroundColor: "blue" }}
+            loading="lazy"
+            style={{ borderRadius: "50%" }}
             src={profile}
             //src={"https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"}
-            alt="profile"
+            alt="profile Image"
           />
         </Profile>
       </Slide>
@@ -172,7 +173,7 @@ const Social = styled.div`
 const Profile = styled.div`
   img {
     width: 310px;
-    height: 320px;
+    height: 310px;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {
